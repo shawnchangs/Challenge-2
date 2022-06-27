@@ -1,0 +1,244 @@
+/* flexbox, media queries, and CSS variables */
+/* universal color variables */
+:root {
+    --background-color: #0cc2c2ef;
+    --banner-color: #c5c50bdf;
+    --text-color: #808080e6;
+    --navlink-color: #d58f0b;
+    --header-border: black;
+    --boxshadow-color: blue;
+    --link-color: #086508;
+    --dividing-line: #970404;
+    --app-color: #db9fdb;
+}
+/* CSS reset: all elements will have these styles in different browsers */
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 15pt;
+    box-sizing: border-box;
+}
+
+/* applies to entire body */
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    color: var(--text-color);
+    display: inline;
+}
+
+/* header */
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2%;
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+
+header h1 {
+    font-size: 250%;
+    border: 3px solid var(--header-border);
+    padding: 10px;
+    box-shadow: 2px 2px 2px 1px var(--boxshadow-color);
+}
+
+/* hero section (avatar + subtitle) */
+.hero {
+    background-image: url("../images/coding.jpeg");
+    height: 270px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.hero p {
+    font-size: 80px;
+    color: var(--banner-color);
+}
+
+/* title */
+.title {
+    border-right: 5px solid var(--dividing-line);
+    min-height: 100%;
+    text-align: right;
+    padding-right: 40px;
+    min-width: 20%;
+    max-width: 20%;
+}
+.title h2 {
+    margin: 2% 0;
+    font-size: 200%;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+  
+header nav a {
+    color: var(--navlink-color);
+    font-weight: bold;
+    margin: 20px 40px 0 0;
+    padding: 8px;
+}
+  
+header nav a:hover {
+    color: #fff;
+}
+
+/* about me section */
+.about-me {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 30px 80px 30px 50px;
+}
+
+.about-me p {
+    font-size: 20px;
+    padding-left: 80px;
+    line-height: 1.5;
+    width: 100%;
+}
+
+/* work section */
+.work {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 80px 30px 50px;
+}
+
+.work p {
+    font-size: 20px;
+    padding-left: 80px;
+    line-height: 1.5;
+    width: 100%;
+}
+
+/* grid work section with projects */
+.work-grid-wrapper {
+    width: 80%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+/* grid with small gap in between */
+.work-grid {
+    width: 90%;
+    display: grid;
+    gap: 5px;
+}
+
+.app {
+    border: solid;
+    border-width: medium;
+    color: black;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-decoration: none;
+    background-size: cover;
+    background-position: center;
+}
+
+/* transparent when hover */
+.app:hover {
+    opacity: 0.5;
+}
+
+/* make the top one bigger than the rest */
+.calculator {
+    grid-column: span 2;
+    grid-row: span 2;
+    background-image: url("../images/calculator.jpg");
+}
+
+.javascript {
+    background-image: url("../images/javascript.png");
+    background-position: 50% 15%;
+}
+
+.html {
+    background-image: url("../images/html.png");
+    background-position: 60% 50%;
+}
+
+.blankone {
+    background-image: url("../images/aloe.jpeg");
+}
+
+.blank2 {
+    background-image: url("../images/sky.jpeg");
+}
+
+.app-label {
+    background-color: var(--app-color);
+    opacity: 0.8;
+    color: var(--text-color);
+    padding: 5px;
+}
+
+/* contact me section */
+footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    margin-bottom: 30px;
+}
+
+.content-wrapper {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contact-list {
+    width: 80%;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+footer ul li {
+    padding-bottom: 15px;
+    font-weight: bold;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: var(--link-color);
+    padding: 8px;
+    font-weight: bold;
+}
+
+footer ul li a:hover {
+    background: var(--background-color);
+    color: var(--text-color);
+    border-radius: 15px;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+      flex-direction: column;
+    }
+  
+    body {
+      max-width: 1200px;
+    }
+  }
